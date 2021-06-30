@@ -5,7 +5,9 @@ namespace StoreUI
         CustomerMenu,
         CustomerInputMenu,
         CustomerShowMenu,
-        Exit
+        Exit,
+        Invalid,
+        Unfinished
     }
 
     public interface IMenu{
