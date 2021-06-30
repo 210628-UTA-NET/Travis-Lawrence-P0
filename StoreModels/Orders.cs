@@ -1,18 +1,23 @@
 using System;
+using System.Collections.Generic;
 
 namespace StoreModels
 {
     public class Orders{
-        //private List<LineItems> _orderItems;
-        private string _location;
-        private double _price;
+        private List<LineItems> _orderItems;
 
         public Orders(){
-            _location = "";
-            _price = 0;
+            Location = "";
+            Price = 0;
+            _orderItems = new List<LineItems>();
+        }
+        public Orders(string p_loc, double p_price){
+            Location = p_loc;
+            Price = p_price;
+            _orderItems = new List<LineItems>();
         }
 
-        public string Location{get => _location; set => _location = value;}
-        public double Price{get => _price; set => _price = value;}
+        public string Location{get; set;}
+        public double Price{get; set;}
     }
 }
