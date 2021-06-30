@@ -1,6 +1,6 @@
 using System;
 
-namespace StoreApp
+namespace StoreModels
 {
     public class Customer{
         private string _name;

@@ -1,6 +1,6 @@
 using System;
 
-namespace StoreApp
+namespace StoreModels
 {
     public class Orders{
         //private List<LineItems> _orderItems;

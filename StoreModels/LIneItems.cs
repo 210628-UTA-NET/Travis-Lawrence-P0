@@ -1,6 +1,6 @@
 using System;
 
-namespace StoreApp
+namespace StoreModels
 {
     public class LineItems{
         //private Products _product;
