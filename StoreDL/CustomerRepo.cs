@@ -13,8 +13,7 @@ namespace StoreDL
 
         public Customer AddData(Customer p_entry)
         {
-            _jsonString = ReadDatabase();
-            List<Customer> custList = JsonSerializer.Deserialize<List<Customer>>(_jsonString);
+            List<Customer> custList = GetAllData();
             custList.Add(p_entry);
             _jsonString = JsonSerializer.Serialize(custList, new JsonSerializerOptions{WriteIndented = true});
             File.WriteAllText(_filepath, _jsonString);
@@ -23,26 +22,21 @@ namespace StoreDL
 
         public List<Customer> GetAllData()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _jsonString = File.ReadAllText(_filepath);
+            }
+            catch (System.Exception)
+            {
+                throw new FileNotFoundException();
+            }
+
+            return JsonSerializer.Deserialize<List<Customer>>(_jsonString);
         }
 
         public Customer GetData(Customer p_entry)
         {
             throw new NotImplementedException();
-        }
-
-        string ReadDatabase(){
-            string ret;
-            try
-            {
-                ret = File.ReadAllText(_filepath);
-            }
-            catch (System.Exception)
-            {            
-                throw new FileNotFoundException();
-            }
-
-            return ret;
         }
     }
 }
