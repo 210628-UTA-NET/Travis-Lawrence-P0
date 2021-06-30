@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace StoreApp
+namespace StoreUI
 {
     public class CustomerInputMenu{
         private List<Customer> _customers;

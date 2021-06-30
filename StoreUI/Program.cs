@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StoreApp
+namespace StoreUI
 {
     class Program
     {
