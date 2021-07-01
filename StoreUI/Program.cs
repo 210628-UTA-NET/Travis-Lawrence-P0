@@ -6,21 +6,38 @@ namespace StoreUI
     {
         static void Main(string[] args)
         {
-            CustomerInputMenu menu = new CustomerInputMenu();
+            IMenu menu = new MainMenu();
             bool exit = false;
-            string currentMenu = "CustomerInputMenu";
+            MenuType currentMenu = MenuType.MainMenu;
+            MenuFactory factory = new MenuFactory();
 
             while(!exit){
                 Console.Clear();
-                menu.displayMenu();
-                currentMenu = menu.menuChoice();
+                menu.dispMenu();
+                currentMenu = menu.choice();
 
                 switch (currentMenu)
                 {
-                    case "CustomerInputMenu":
+                    case MenuType.MainMenu:
+                        menu = factory.GetMenu(MenuType.MainMenu);
                         break;
-                    case "Exit":
+                    case MenuType.CustomerMenu:
+                        menu = factory.GetMenu(MenuType.CustomerMenu);
+                        break;
+                    case MenuType.CustomerAddMenu:
+                        menu = factory.GetMenu(MenuType.CustomerAddMenu);
+                        break;
+                    case MenuType.Exit:
                         exit = true;
+                        break;
+                    case MenuType.Invalid:
+                        System.Console.WriteLine("Error: input not recognized.");
+                        System.Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
+                        break;
+                    case MenuType.Unfinished:
+                        System.Console.WriteLine("Sorry, I'm still working on that one.");
+                        Console.ReadLine();
                         break;
                     default:
                         break;
