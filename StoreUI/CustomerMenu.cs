@@ -11,9 +11,9 @@ namespace StoreUI
             switch (input)
             {
                 case "0":
-                    return MenuType.Exit;
+                    return MenuType.MainMenu;
                 case "1":
-                    return MenuType.CustomerInputMenu;
+                    return MenuType.CustomerAddMenu;
                 //Add customer search menu    
                 case "2":
                     return MenuType.Unfinished;

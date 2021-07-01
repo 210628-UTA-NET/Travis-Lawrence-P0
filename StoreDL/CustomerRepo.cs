@@ -8,7 +8,7 @@ namespace StoreDL
 {
     public class CustomerRepo : IRepo<Customer>
     {
-        private const string _filepath = "./Databases/Customers.json";
+        private const string _filepath = "./../StoreDL/Databases/Customers.json";
         private string _jsonString;
 
         public Customer AddData(Customer p_entry)
