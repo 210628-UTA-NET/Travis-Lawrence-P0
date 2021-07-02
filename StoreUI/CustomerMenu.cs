@@ -17,9 +17,8 @@ namespace StoreUI
                 //Add customer search menu    
                 case "2":
                     return MenuType.Unfinished;
-                //Add read all customer menu
                 case "3":
-                    return  MenuType.Unfinished;
+                    return  MenuType.CustomerShowMenu;
                 default:
                     return MenuType.Invalid;
             }

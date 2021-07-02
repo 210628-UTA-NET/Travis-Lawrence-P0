@@ -13,8 +13,8 @@ namespace StoreUI
                     return new CustomerMenu();
                 case MenuType.CustomerAddMenu:
                     return new CustomerAddMenu(new CustomerBL(new CustomerRepo()));
-                // case MenuType.CustomerShowMenu:
-                //     return new CustomerShowMenu();
+                case MenuType.CustomerShowMenu:
+                    return new CustomerShowMenu(new CustomerBL(new CustomerRepo()));
                 // case MenuType.CustomerInputMenu:
                 //     return new CustomerInputMenu();
                 default:

@@ -19,7 +19,7 @@ namespace StoreBL
 
         public List<Customer> GetAllData()
         {
-            throw new NotImplementedException();
+            return _repo.GetAllData();
         }
 
         public Customer GetData()
