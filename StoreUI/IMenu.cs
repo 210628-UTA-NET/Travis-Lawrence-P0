@@ -4,8 +4,8 @@ namespace StoreUI
         MainMenu,
         CustomerMenu,
         CustomerAddMenu,
-        CustomerInputMenu,
         CustomerShowMenu,
+        CustomerSearchMenu,
         Exit,
         Invalid,
         Unfinished

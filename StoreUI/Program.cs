@@ -30,6 +30,9 @@ namespace StoreUI
                     case MenuType.CustomerShowMenu:
                         menu = factory.GetMenu(MenuType.CustomerShowMenu);
                         break;
+                    case MenuType.CustomerSearchMenu:
+                        menu = factory.GetMenu(MenuType.CustomerSearchMenu);
+                        break;
                     case MenuType.Exit:
                         exit = true;
                         break;

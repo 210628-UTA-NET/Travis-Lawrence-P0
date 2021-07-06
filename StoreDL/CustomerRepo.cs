@@ -6,7 +6,7 @@ using StoreModels;
 
 namespace StoreDL
 {
-    public class CustomerRepo : IRepo<Customer>
+    public class CustomerRepo : ICustomerRepo
     {
         private const string _filepath = "./../StoreDL/Databases/Customers.json";
         private string _jsonString;
@@ -34,9 +34,15 @@ namespace StoreDL
             return JsonSerializer.Deserialize<List<Customer>>(_jsonString);
         }
 
-        public Customer GetData(Customer p_entry)
-        {
-            throw new NotImplementedException();
+        public List<Customer> NameSearch(string p_name){
+            List<Customer> custList = GetAllData();
+            List<Customer> retCust = new List<Customer>();
+            foreach(Customer c in custList){
+                if (c.Name == p_name){
+                    retCust.Add(c);
+                }
+            }
+            return retCust;
         }
     }
 }

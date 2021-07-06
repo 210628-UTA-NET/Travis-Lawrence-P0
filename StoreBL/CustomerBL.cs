@@ -7,8 +7,8 @@ namespace StoreBL
 {
     public class CustomerBL : IBL<Customer>
     {
-        private IRepo<Customer> _repo;
-        public CustomerBL(IRepo<Customer> p_repo){
+        private ICustomerRepo _repo;
+        public CustomerBL(ICustomerRepo p_repo){
             _repo = p_repo;
         }
 
@@ -25,6 +25,10 @@ namespace StoreBL
         public Customer GetData()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Customer> NameSearch(string p_name){
+            return _repo.NameSearch(p_name);
         }
     }
 }

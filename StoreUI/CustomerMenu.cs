@@ -14,9 +14,8 @@ namespace StoreUI
                     return MenuType.MainMenu;
                 case "1":
                     return MenuType.CustomerAddMenu;
-                //Add customer search menu    
                 case "2":
-                    return MenuType.Unfinished;
+                    return MenuType.CustomerSearchMenu;
                 case "3":
                     return  MenuType.CustomerShowMenu;
                 default:
