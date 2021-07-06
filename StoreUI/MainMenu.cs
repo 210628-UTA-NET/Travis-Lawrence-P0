@@ -14,6 +14,8 @@ namespace StoreUI
                     return MenuType.Exit;
                 case "1":
                     return MenuType.CustomerMenu;
+                case "2":
+                    return MenuType.StoreFrontMenu;
                 default:
                     return MenuType.Invalid;
             }
@@ -23,6 +25,7 @@ namespace StoreUI
         {
             System.Console.WriteLine("<===Main Menu===>");
             System.Console.WriteLine("Please select an option.");
+            System.Console.WriteLine("[2] Store menu");
             System.Console.WriteLine("[1] Customer menu");
             System.Console.WriteLine("[0] Exit");
         }

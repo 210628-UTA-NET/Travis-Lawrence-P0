@@ -17,6 +17,10 @@ namespace StoreUI
                     return new CustomerShowMenu(new CustomerBL(new CustomerRepo()));
                 case MenuType.CustomerSearchMenu:
                     return new CustomerSearchMenu(new CustomerBL(new CustomerRepo()));
+                case MenuType.StoreFrontMenu:
+                    return new StoreFrontMenu();
+                case MenuType.StoreFrontInventoryMenu:
+                    return new StoreFrontInventoryMenu(new StoreFrontBL(new StoreFrontRepo()));
                 default:
                     return null;
             }
