@@ -15,5 +15,10 @@ namespace StoreModels
 
         public int Quantity{get; set;}
         public Products Product{get; set;}
+
+        public override string ToString()
+        {
+            return $"Product: {Product.Name}\n Quantity: {Quantity}";
+        }
     }
 }
