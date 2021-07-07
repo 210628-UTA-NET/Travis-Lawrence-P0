@@ -23,7 +23,18 @@ namespace StoreDL
             // _jsonString = JsonSerializer.Serialize(custList, new JsonSerializerOptions{WriteIndented = true});
             // File.WriteAllText(_filepath, _jsonString);
             // return custList[custList.Count-1];
-            throw new System.NotImplementedException();
+            _context.Customers.Add(
+                new Entities.Customer(){
+                    CustomerId = p_entry.CustomerID,
+                    Name = p_entry.Name,
+                    Address = p_entry.Address,
+                    Email = p_entry.Email,
+                    Phone = p_entry.PhoneNumber
+                }
+            );
+
+            _context.SaveChanges();
+            return p_entry;
         }
 
         public List<Customer> GetAllData()

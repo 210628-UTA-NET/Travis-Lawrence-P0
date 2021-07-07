@@ -34,7 +34,7 @@ namespace StoreUI
                 case "2":
                     try
                     {
-                        _cust.PhoneNumber = Convert.ToInt32(Console.ReadLine());
+                        _cust.PhoneNumber = Convert.ToInt64(Console.ReadLine());
                     }
                     catch (System.Exception)
                     {
