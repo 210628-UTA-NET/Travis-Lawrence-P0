@@ -3,35 +3,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using StoreModels;
+using System.Linq;
 
 namespace StoreDL
 {
     public class CustomerRepo : ICustomerRepo
     {
-        private const string _filepath = "./../StoreDL/Databases/Customers.json";
-        private string _jsonString;
+        //private const string _filepath = "./../StoreDL/Databases/Customers.json";
+        //private string _jsonString;
+        private Entities.DemoDbContext _context;
+        public CustomerRepo(Entities.DemoDbContext p_context){
+            _context = p_context;
+        }
 
         public Customer AddData(Customer p_entry)
         {
-            List<Customer> custList = GetAllData();
-            custList.Add(p_entry);
-            _jsonString = JsonSerializer.Serialize(custList, new JsonSerializerOptions{WriteIndented = true});
-            File.WriteAllText(_filepath, _jsonString);
-            return custList[custList.Count-1];
+            // List<Customer> custList = GetAllData();
+            // custList.Add(p_entry);
+            // _jsonString = JsonSerializer.Serialize(custList, new JsonSerializerOptions{WriteIndented = true});
+            // File.WriteAllText(_filepath, _jsonString);
+            // return custList[custList.Count-1];
+            throw new System.NotImplementedException();
         }
 
         public List<Customer> GetAllData()
         {
-            try
-            {
-                _jsonString = File.ReadAllText(_filepath);
-            }
-            catch (System.Exception)
-            {
-                throw new FileNotFoundException();
-            }
+            // try
+            // {
+            //     _jsonString = File.ReadAllText(_filepath);
+            // }
+            // catch (System.Exception)
+            // {
+            //     throw new FileNotFoundException();
+            // }
 
-            return JsonSerializer.Deserialize<List<Customer>>(_jsonString);
+            // return JsonSerializer.Deserialize<List<Customer>>(_jsonString);
+            return _context.Customers.Select(
+                cust => 
+                    new Customer(){
+                        CustomerID = cust.CustomerId,
+                        Name = cust.Name,
+                        Address = cust.Address,
+                        Email = cust.Email,
+                        PhoneNumber = cust.Phone
+                    }
+            ).ToList();
         }
 
         public List<Customer> NameSearch(string p_name){
