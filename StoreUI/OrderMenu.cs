@@ -2,7 +2,7 @@ using System;
 
 namespace StoreUI
 {
-    public class StoreFrontMenu : IMenu
+    public class OrderMenu : IMenu
     {
         public MenuType choice()
         {
@@ -13,7 +13,7 @@ namespace StoreUI
                 case "0":
                     return MenuType.MainMenu;
                 case "1":
-                    return MenuType.StoreFrontInventoryMenu;
+                    return MenuType.OrderPlaceMenu;
                 default:
                     return MenuType.Invalid;
             }
@@ -21,9 +21,8 @@ namespace StoreUI
 
         public void dispMenu()
         {
-            System.Console.WriteLine("<---Store Menu--->");
-            System.Console.WriteLine("Please select an option");
-            System.Console.WriteLine("[1] Get a Store's inventory");
+            System.Console.WriteLine("<---Order Menu--->");
+            System.Console.WriteLine("[1] Place an order");
             System.Console.WriteLine("[0] Back to main menu");
         }
     }

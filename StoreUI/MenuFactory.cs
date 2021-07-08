@@ -36,7 +36,9 @@ namespace StoreUI
                 case MenuType.StoreFrontMenu:
                     return new StoreFrontMenu();
                 case MenuType.StoreFrontInventoryMenu:
-                    return new StoreFrontInventoryMenu(new StoreFrontBL(new StoreFrontRepo()));
+                    return new StoreFrontInventoryMenu(new StoreFrontBL(new StoreFrontRepo(new DemoDbContext(options))));
+                case MenuType.OrderMenu:
+                    return new OrderMenu();
                 default:
                     return null;
             }

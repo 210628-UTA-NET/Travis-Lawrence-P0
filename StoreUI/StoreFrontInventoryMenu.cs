@@ -23,14 +23,14 @@ namespace StoreUI
                 case "0":
                     return MenuType.StoreFrontMenu;
                 case "1":
-                    System.Console.WriteLine("Please enter a Store Front's name");
+                    System.Console.WriteLine("Please enter a Store's name");
                     try
                     {
                         _storeFronts = _storeFrontBL.NameSearch(Console.ReadLine());
                     }
                     catch (System.Exception)
                     {
-                        throw;
+                        throw new Exception();
                     }
 
                     if(_storeFronts.Count == 0){
@@ -48,6 +48,7 @@ namespace StoreUI
                         }
                         else{
                             System.Console.WriteLine(s.Inventory);
+                            System.Console.WriteLine();
                         }
                         System.Console.WriteLine("====================");
                     }
@@ -62,7 +63,7 @@ namespace StoreUI
         public void dispMenu()
         {
             System.Console.WriteLine("<---See Inventory--->");
-            System.Console.WriteLine("[1] Search for a Store Front");
+            System.Console.WriteLine("[1] Search for a Store");
             System.Console.WriteLine("[0] Back");
         }
     }

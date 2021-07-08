@@ -8,6 +8,8 @@ namespace StoreUI
         CustomerSearchMenu,
         StoreFrontMenu,
         StoreFrontInventoryMenu,
+        OrderMenu,
+        OrderPlaceMenu,
         Exit,
         Invalid,
         Unfinished
