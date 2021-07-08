@@ -56,7 +56,7 @@ namespace StoreDL
                         Name = cust.Name,
                         Address = cust.Address,
                         Email = cust.Email,
-                        PhoneNumber = cust.Phone
+                        PhoneNumber = (long)cust.Phone
                     }
             ).ToList();
         }
