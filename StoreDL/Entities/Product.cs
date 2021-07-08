@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using StoreModels;
 
 #nullable disable
 
@@ -19,5 +20,14 @@ namespace StoreDL.Entities
         public string Category { get; set; }
 
         public virtual ICollection<LineItem> LineItems { get; set; }
+
+        public Products ToProducts(){
+            return new Products(){
+                Name = this.Name,
+                Price = (double)this.Price,
+                Desc = this.Description,
+                Category = this.Category
+            };
+        }
     }
 }
