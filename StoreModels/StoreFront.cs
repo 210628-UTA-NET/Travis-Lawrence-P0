@@ -22,6 +22,6 @@ namespace StoreModels
         public string Name{get; set;}
         public string Address{get; set;}
 
-        public List<LineItems> Inventory{get;}
+        public List<LineItems> Inventory{get; set;}
     }
 }
