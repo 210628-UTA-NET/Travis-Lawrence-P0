@@ -62,14 +62,16 @@ namespace StoreDL
         }
 
         public List<Customer> NameSearch(string p_name){
-            List<Customer> custList = GetAllData();
-            List<Customer> retCust = new List<Customer>();
-            foreach(Customer c in custList){
-                if (c.Name == p_name){
-                    retCust.Add(c);
-                }
-            }
-            return retCust;
+            // List<Customer> custList = GetAllData();
+            // List<Customer> retCust = new List<Customer>();
+            // foreach(Customer c in custList){
+            //     if (c.Name == p_name){
+            //         retCust.Add(c);
+            //     }
+            // }
+            // return retCust;
+
+            return GetAllData().Where(c => c.Name == p_name).ToList();
         }
     }
 }
