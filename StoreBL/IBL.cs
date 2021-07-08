@@ -13,11 +13,6 @@ namespace StoreBL
         /// <returns>Returns a list of all objects within a model's database</returns>
         List<T> GetAllData();
         /// <summary>
-        /// Searches a database and retrieves an object with a corresponding parameter to the input. Will be overloaded according to each child class.
-        /// </summary>
-        /// <returns>Returns the object if it is found</returns>
-        T GetData();
-        /// <summary>
         /// Adds a new object to the database.
         /// </summary>
         /// <param name="p_entry">The new object to be added</param>

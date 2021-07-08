@@ -22,11 +22,6 @@ namespace StoreBL
             return _repo.GetAllData();
         }
 
-        public Customer GetData()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Customer> NameSearch(string p_name){
             return _repo.NameSearch(p_name);
         }
