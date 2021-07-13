@@ -19,6 +19,7 @@ namespace StoreUI
             switch (input)
             {
                 case "0":
+                    _cust = new Customer("","","",0);
                     return MenuType.CustomerMenu;
                 case "1":
                     if(_cust.Name == "" || _cust.Address == "" || _cust.Email == "" || _cust.PhoneNumber == 0){
@@ -30,6 +31,7 @@ namespace StoreUI
                     System.Console.WriteLine("Customer added successfully.");
                     System.Console.WriteLine("Press Enter to continue.");
                     Console.ReadLine();
+                    _cust = new Customer("","","",0);
                     return MenuType.CustomerMenu;
                 case "2":
                     try
