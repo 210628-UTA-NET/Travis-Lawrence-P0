@@ -13,5 +13,6 @@ namespace StoreDL
         /// <param name="p_name">The name being searched for</param>
         /// <returns>Returns a list of all storefronts with the desired name</returns>
         List<StoreFront> NameSearch(string p_name);
+        bool Update(StoreFront p_store);
     }
 }

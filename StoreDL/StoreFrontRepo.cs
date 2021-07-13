@@ -35,13 +35,38 @@ namespace StoreDL
             return _context.StoreFronts.Select(
                 store =>
                     new StoreFront(){
+                        StoreID = store.StoreFrontId,
                         Name = store.Name,
                         Address = store.Address,
                         Inventory = store.LineItems.Select(
                             line =>
                                 new LineItems(){
-                                    Product = line.Product.ToProducts(),
+                                    LineItemId = line.LineItemId,
+                                    StoreFrontID = line.StoreFrontId,
+                                    OrderID = line.OrderId,
+                                    Product = line.Product.ToStoreModel(),
                                     Quantity = (int)line.Quantity
+                                }
+                        ).ToList(),
+                        Orders = store.Orders.Select(
+                            ord =>
+                                new Orders(){
+                                    OrderID = ord.OrderId,
+                                    CustomerID = ord.CustomerId,
+                                    StoreFrontID = ord.StoreFrontId,
+                                    Price = (double)ord.TotalPrice,
+                                    OrderItems = ord.LineItems.Select(
+                                        item =>
+                                            new LineItems(){
+                                                Product = item.Product.ToStoreModel(),
+                                                Quantity = (int)item.Quantity,
+                                                LineItemId = item.LineItemId,
+                                                StoreFrontID = item.StoreFrontId,
+                                                OrderID = item.OrderId,
+                                                ProductID = (int)item.ProductId
+                                            }
+                                    ).ToList(),
+                                    Location = ord.Location
                                 }
                         ).ToList()
                    }
@@ -59,6 +84,12 @@ namespace StoreDL
             // }
             // return retStoreF;
             return GetAllData().Where(s => s.Name == p_name).ToList();
+        }
+
+        public bool Update(StoreFront p_store){
+            _context.Update(StoreConvert.ToEntModel(p_store));
+            _context.SaveChanges();
+            return true;
         }
     }
 }
