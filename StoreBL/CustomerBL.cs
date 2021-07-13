@@ -5,7 +5,7 @@ using StoreModels;
 
 namespace StoreBL
 {
-    public class CustomerBL : IBL<Customer>
+    public class CustomerBL : ICustomerBL
     {
         private ICustomerRepo _repo;
         public CustomerBL(ICustomerRepo p_repo){
