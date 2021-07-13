@@ -17,5 +17,18 @@ namespace StoreBL
         {
             return _storeFrontRepo.NameSearch(p_name);
         }
+
+        public bool Update(StoreFront p_store)
+        {
+            try
+            {
+                _storeFrontRepo.Update(p_store);
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

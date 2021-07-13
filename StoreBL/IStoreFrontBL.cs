@@ -13,5 +13,7 @@ namespace StoreBL
         /// <param name="p_name">The name being searched for</param>
         /// <returns>Returns a list of all StoreFronts will matching names</returns>
         public List<StoreFront> NameSearch(string p_name);
+
+        public bool Update(StoreFront p_store);
     }
 }
