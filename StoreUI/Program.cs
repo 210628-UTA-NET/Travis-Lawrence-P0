@@ -39,8 +39,17 @@ namespace StoreUI
                     case MenuType.StoreFrontInventoryMenu:
                         menu = factory.GetMenu(MenuType.StoreFrontInventoryMenu);
                         break;
+                    case MenuType.StoreFrontInventoryReplenishMenu:
+                        menu = factory.GetMenu(MenuType.StoreFrontInventoryReplenishMenu);
+                        break;
                     case MenuType.OrderMenu:
                         menu = factory.GetMenu(MenuType.OrderMenu);
+                        break;
+                    case MenuType.OrderPlaceMenu:
+                        menu = factory.GetMenu(MenuType.OrderPlaceMenu);
+                        break;
+                    case MenuType.OrderGetMenu:
+                        menu = factory.GetMenu(MenuType.OrderGetMenu);
                         break;
                     case MenuType.Exit:
                         exit = true;
