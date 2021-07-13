@@ -56,7 +56,28 @@ namespace StoreDL
                         Name = cust.Name,
                         Address = cust.Address,
                         Email = cust.Email,
-                        PhoneNumber = (long)cust.Phone
+                        PhoneNumber = (long)cust.Phone,
+                        Orders = cust.Orders.Select(
+                            ord =>
+                                new Orders(){
+                                    OrderID = ord.OrderId,
+                                    CustomerID = ord.CustomerId,
+                                    StoreFrontID = ord.StoreFrontId,
+                                    Price = (double)ord.TotalPrice,
+                                    OrderItems = ord.LineItems.Select(
+                                        item =>
+                                            new LineItems(){
+                                                Product = item.Product.ToStoreModel(),
+                                                Quantity = (int)item.Quantity,
+                                                LineItemId = item.LineItemId,
+                                                StoreFrontID = item.StoreFrontId,
+                                                OrderID = item.OrderId,
+                                                ProductID = (int)item.ProductId
+                                            }
+                                    ).ToList(),
+                                    Location = ord.Location
+                                }
+                        ).ToList()
                     }
             ).ToList();
         }
