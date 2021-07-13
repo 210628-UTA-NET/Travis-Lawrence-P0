@@ -23,7 +23,7 @@ namespace StoreUI
         {
             System.Console.WriteLine("<---Store Menu--->");
             System.Console.WriteLine("Please select an option");
-            System.Console.WriteLine("[1] Get a Store's inventory");
+            System.Console.WriteLine("[1] Go to Inventory Menu");
             System.Console.WriteLine("[0] Back to main menu");
         }
     }
