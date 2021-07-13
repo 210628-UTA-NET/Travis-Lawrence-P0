@@ -80,6 +80,10 @@ namespace StoreDL.Entities
 
                 entity.Property(e => e.TotalPrice).HasColumnType("money");
 
+                entity.Property(e => e.Location)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
