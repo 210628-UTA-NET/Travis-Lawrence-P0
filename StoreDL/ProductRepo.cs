@@ -22,6 +22,7 @@ namespace StoreDL
             return _context.Products.Select(
                 prod =>
                     new Products(){
+                        ProductID = prod.ProductId,
                         Name = prod.Name,
                         Price = (double)prod.Price,
                         Desc = prod.Description,

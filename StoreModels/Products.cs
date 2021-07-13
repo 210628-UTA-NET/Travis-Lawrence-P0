@@ -18,6 +18,7 @@ namespace StoreModels
             Category = p_cat;
         }
 
+        public int ProductID{get; set;}
         public string Name{get; set;}
         public double Price{get; set;}
         public string Desc{get; set;}
@@ -26,12 +27,12 @@ namespace StoreModels
 
         public override string ToString()
         {
-            string retString = $"Product Name: {Name}\nPrice: {Price}";
+            string retString = $"Product Name: {Name}\nPrice: ${Price}";
             if(Desc != null){
-                String.Concat(retString, $"\nDescription: {Desc}");
+                retString = String.Concat(retString, $"\nDescription: {Desc}");
             }
             if(Category != null){
-                String.Concat(retString, $"\nCategory: {Category}");
+                retString = String.Concat(retString, $"\nCategory: {Category}");
             }
             return retString;
         }
