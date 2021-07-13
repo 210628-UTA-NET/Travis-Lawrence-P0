@@ -8,8 +8,8 @@ namespace StoreUI
     public class CustomerAddMenu : IMenu
     {
         private static Customer _cust = new Customer();
-        private IBL<Customer> _custBL;
-        public CustomerAddMenu(IBL<Customer> p_custBL){
+        private ICustomerBL _custBL;
+        public CustomerAddMenu(ICustomerBL p_custBL){
             _custBL = p_custBL;
         }
         public MenuType choice()

@@ -12,8 +12,12 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_name">The name being searched for</param>
         /// <returns>Returns a list of all StoreFronts will matching names</returns>
-        public List<StoreFront> NameSearch(string p_name);
-
-        public bool Update(StoreFront p_store);
+        List<StoreFront> NameSearch(string p_name);
+        /// <summary>
+        /// Updates a StoreFront model in the database
+        /// </summary>
+        /// <param name="p_store">The StoreFront with modified data</param>
+        /// <returns>Returns a boolean indicating whether the update was successful</returns>
+        bool Update(StoreFront p_store);
     }
 }

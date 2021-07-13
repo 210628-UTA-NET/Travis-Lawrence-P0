@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using StoreModels;
 using StoreDL;
 
@@ -12,11 +11,6 @@ namespace StoreBL
             _repo = p_repo;
         }
 
-        public Orders AddData(Orders p_entry)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Orders PlaceOrder(Orders p_entry, Customer p_cust, StoreFront p_store){
             p_entry.CustomerID = p_cust.CustomerID;
             p_entry.Location = p_store.Name;
@@ -24,11 +18,6 @@ namespace StoreBL
             p_entry.Location = p_store.Name;
             _repo.AddData(p_entry);
             return p_entry;
-        }
-
-        public List<Orders> GetAllData()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
