@@ -13,12 +13,16 @@ namespace StoreModels
             Product = p_prod;
         }
 
+        public int LineItemId{get; set;}
+        public int? StoreFrontID{get; set;}
+        public int? OrderID{get; set;}
+        public int ProductID{get; set;}
         public int Quantity{get; set;}
         public Products Product{get; set;}
 
         public override string ToString()
         {
-            return $"Product: {Product.Name}\n Quantity: {Quantity}";
+            return $"{Product}\nQuantity: {Quantity}";
         }
     }
 }
