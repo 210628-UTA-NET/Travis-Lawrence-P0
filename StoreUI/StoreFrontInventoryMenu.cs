@@ -47,7 +47,11 @@ namespace StoreUI
                             System.Console.WriteLine("Store currently has no inventory");
                         }
                         else{
-                            System.Console.WriteLine(s.Inventory);
+                            foreach (LineItems i in s.Inventory)
+                            {
+                                System.Console.WriteLine(i);
+                                System.Console.WriteLine("--------------------");
+                            }
                             System.Console.WriteLine();
                         }
                         System.Console.WriteLine("====================");
@@ -55,6 +59,8 @@ namespace StoreUI
                     System.Console.WriteLine("Press Enter to return");
                     Console.ReadLine();
                     return MenuType.StoreFrontInventoryMenu;
+                case "2":
+                    return MenuType.StoreFrontInventoryReplenishMenu;
                 default:
                     return MenuType.Invalid;
             }
@@ -62,8 +68,9 @@ namespace StoreUI
 
         public void dispMenu()
         {
-            System.Console.WriteLine("<---See Inventory--->");
-            System.Console.WriteLine("[1] Search for a Store");
+            System.Console.WriteLine("<---Inventory Menu--->");
+            System.Console.WriteLine("[2] Restock a store's inventory");
+            System.Console.WriteLine("[1] See a store's inventory");
             System.Console.WriteLine("[0] Back");
         }
     }
