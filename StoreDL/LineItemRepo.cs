@@ -22,7 +22,7 @@ namespace StoreDL
             return _context.LineItems.Select(
                 line =>
                     new LineItems(){
-                        Product = line.Product.ToProducts(),
+                        Product = line.Product.ToStoreModel(),
                         Quantity = (int)line.Quantity
                     }
             ).ToList();
