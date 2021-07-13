@@ -14,6 +14,8 @@ namespace StoreUI
                     return MenuType.MainMenu;
                 case "1":
                     return MenuType.OrderPlaceMenu;
+                case "2":
+                    return MenuType.OrderGetMenu;
                 default:
                     return MenuType.Invalid;
             }
@@ -22,6 +24,7 @@ namespace StoreUI
         public void dispMenu()
         {
             System.Console.WriteLine("<---Order Menu--->");
+            System.Console.WriteLine("[2] View order histories");
             System.Console.WriteLine("[1] Place an order");
             System.Console.WriteLine("[0] Back to main menu");
         }
