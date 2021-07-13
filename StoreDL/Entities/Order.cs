@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using StoreModels;
+using System.Linq;
 
 #nullable disable
 
@@ -16,6 +18,7 @@ namespace StoreDL.Entities
         public int? CustomerId { get; set; }
         public int? StoreFrontId { get; set; }
         public decimal? TotalPrice { get; set; }
+        public string Location {get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual StoreFront StoreFront { get; set; }
