@@ -4,20 +4,35 @@ using System.Collections.Generic;
 namespace StoreModels
 {
     public class Orders{
-        private List<LineItems> _orderItems;
 
         public Orders(){
-            Location = "";
             Price = 0;
-            _orderItems = new List<LineItems>();
-        }
-        public Orders(string p_loc, double p_price){
-            Location = p_loc;
-            Price = p_price;
-            _orderItems = new List<LineItems>();
+            Location = "";
+            OrderItems = new List<LineItems>();
         }
 
+        public Orders(string s){
+            Location = s;
+            OrderItems = new List<LineItems>();
+            Price = 0;
+        }
+
+        public int OrderID{get; set;}
+        public int? CustomerID{get; set;}
+        public int? StoreFrontID{get; set;}
+        public List<LineItems> OrderItems{get; set;}
         public string Location{get; set;}
         public double Price{get; set;}
+
+        public override string ToString()
+        {
+            string retString = $"Ordered from: {Location}\nItems :\n";
+            foreach (LineItems i in OrderItems)
+            {
+                retString = String.Concat(retString, $"\n{i}\n");
+            }
+            retString = String.Concat(retString, $"\nTotal Price: ${Price}");
+            return retString;
+        }
     }
 }
