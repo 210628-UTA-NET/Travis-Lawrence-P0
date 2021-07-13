@@ -21,8 +21,9 @@ namespace StoreDL.Entities
 
         public virtual ICollection<LineItem> LineItems { get; set; }
 
-        public Products ToProducts(){
+        public Products ToStoreModel(){
             return new Products(){
+                ProductID = this.ProductId,
                 Name = this.Name,
                 Price = (double)this.Price,
                 Desc = this.Description,
