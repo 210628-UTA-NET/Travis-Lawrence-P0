@@ -49,8 +49,8 @@ namespace StoreUI
                         else{
                             foreach (LineItems i in s.Inventory)
                             {
-                                System.Console.WriteLine(i);
                                 System.Console.WriteLine("--------------------");
+                                System.Console.WriteLine(i);
                             }
                             System.Console.WriteLine();
                         }
